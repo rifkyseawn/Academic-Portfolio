@@ -412,3 +412,30 @@ html[data-theme="dark"] #top-nav .navbar-toggler-icon::before{
 /* Sedikit kontras untuk border tombol */
 html[data-theme="light"] #top-nav .navbar-toggler{ border-color:#cbd5e1 !important; }
 html[data-theme="dark"]  #top-nav .navbar-toggler{ border-color:#334155 !important; }
+
+
+/* ——— Navbar right controls ——— */
+.navbar .btn-icon{ border:0; background:transparent; line-height:1; }
+.navbar .btn-icon svg{ width:20px; height:20px; display:block; }
+
+/* Warna ikon mengikuti tema */
+html[data-theme="light"] .navbar .btn-icon{ color:#0b1220; }
+html[data-theme="dark"]  .navbar .btn-icon{ color:#ffffff; }
+
+/* Hamburger terlihat di dua tema */
+html[data-theme="light"] .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.8)' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+html[data-theme="dark"] .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Sembunyikan tombol mengambang lama bila masih ada di HTML */
+#options-toggler, #lan.options-button, #theme.options-button{ display:none !important; }
+
+/* Colab button look & feel */
+.btn-pill.colab svg.colab { width:1em; height:1em; vertical-align:-0.125em; margin-right:.4rem; }
+.btn-pill.colab { border-color:#F9AB00; }
+[data-theme="light"] .btn-pill.colab:hover { background:#FFF4D6; }
+[data-theme="dark"]  .btn-pill.colab:hover { background:#4a3b00; }
+
