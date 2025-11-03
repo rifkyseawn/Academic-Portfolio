@@ -1,79 +1,118 @@
-:root {
-	--t-color: #D8DEE9;
-	--h-color: #ffff;
+/* =======================
+   DARK THEME — Polished
+   (drop-in replacement)
+   ======================= */
 
-	--bg-color: #383838;
-	--nv-color: #121212;
+:root{
+  /* Palette */
+  --bg:        #0b1220;   /* page background */
+  --surface-1: #0f172a;   /* cards */
+  --surface-2: #111827;   /* nav / pills */
+  --border:    #1f2937;
+  --muted:     #94a3b8;   /* secondary text */
+  --text:      #e5e7eb;   /* body text */
+  --head:      #f8fafc;   /* headings */
+  --brand-1:   #0dcaf0;   /* accent (teaching) */
+  --brand-2:   #00ffc1;   /* accent (student) */
+  --shadow:    0 8px 24px rgba(2,6,23,.35);
+  --shadow-h:  0 12px 28px rgba(2,6,23,.45);
 }
 
-body {
-	background-color: var(--bg-color);
-	color: var(--t-color)
+/* Base */
+body{ background:var(--bg); color:var(--text); }
+h1,h2,h3,h4,b{ color:var(--head) !important; }
+.t-secondary{ color:var(--muted) !important; }
+
+/* Top nav */
+#top-nav{ background:var(--surface-2) !important; border-bottom:1px solid var(--border); }
+.nav-link{ color:rgba(255,255,255,.92) !important; }
+.nav-link:hover{ color:rgba(255,255,255,.72) !important; }
+.link-dark{ color:var(--head) !important; }
+.link-dark:hover,.link-dark:focus{ color:#e2e8f0 !important; }
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.55)' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-toggler:focus{ box-shadow:0 0 0 3px rgba(148,163,184,.35) !important; }
+
+/* Option button (floating) */
+.options-button{ background:var(--surface-2); border:1px solid var(--border); color:var(--text); }
+#options-toggler{ box-shadow:var(--shadow); }
+#options-toggler:hover{ box-shadow:var(--shadow-h); }
+#theme:hover,#lan:hover{ background:var(--surface-1); }
+
+/* ========== Cards (Projects/Blog & Experience) ========== */
+#blogContent .clickable,
+#academicContent .academic-block,
+.card{
+  background:var(--surface-1);
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+#blogContent .clickable:hover,
+#academicContent .academic-block:hover{ box-shadow:var(--shadow-h); transform:translateY(-1px); }
+
+/* Body text in cards */
+#blogContent .blog-short{ color:var(--muted); }
+#academicContent .academic-rol{ color:var(--muted); }
+
+/* Timeline rail & node */
+#academicContent .row.language::before{ background:#253243; }           /* rail */
+#academicContent .academic-block::before{
+  background:#e5e7eb; border:2px solid var(--surface-1); box-shadow:0 0 0 2px #253243;
 }
 
-h1, h2, h3, h4, b {
-	color: var(--h-color) !important;
+/* Chips & tags */
+#blogContent .chip,
+#blogContent .blog-tags .chip,
+#academicContent .skill-chips .chip,
+#academicContent .exp-tags .chip{
+  background:var(--surface-2);
+  border:1px solid #334155 !important;
+  color:#cbd5e1 !important;
+  box-shadow:none !important;
 }
+#blogContent .chip + .chip,
+#academicContent .skill-chips .chip + .chip{ margin-left:.4rem; }
 
-#top-nav {
-	background-color: var(--nv-color) !important;
+/* Notebook / Report / Widget buttons */
+#blogContent .btn-pill,
+.blog-actions .btn-pill{
+  display:inline-flex; align-items:center; gap:.45rem;
+  background:var(--surface-2);
+  border:1px solid #334155;
+  color:#e5e7eb; border-radius:999px; padding:.45rem .75rem;
+  text-decoration:none; font-weight:600;
 }
+#blogContent .btn-pill:hover{ background:#0f1a2f; border-color:#3b4a5f; }
+#blogContent .btn-pill:focus{ outline:2px solid #e5e7eb; outline-offset:2px; }
 
-.nav-link {
-	color: rgba(255, 255, 255, 0.9) !important;
-}
+/* Lists */
+#academicContent .academic-block li{ color:var(--text); }
 
-.nav-link:hover{
-	color: rgba(255, 255, 255, 0.7) !important;
-}
+/* Teaching accents */
+.academic-name{ color:var(--brand-1); }
+.academic-block{ border-left:2px solid var(--brand-1); }
+.student-block{ border-left:2px solid var(--brand-2); }
+.student-name{ color:var(--brand-2); }
 
-.link-dark {
-	color: var(--h-color) !important;
-}
+/* Links inside content */
+a{ color:#c3e3ff; }
+a:hover{ color:#a9d2ff; }
 
-.link-dark:hover, .link-dark:focus {
-	color: #DBDBDB !important;
-}
+/* Tables / code (optional, for reports/articles) */
+table{ color:var(--text); background:var(--surface-1); }
+th,td{ border-color:var(--border) !important; }
+pre,code{ background:#0a1222; border:1px solid #1e293b; color:#e2e8f0; }
 
-.navbar-toggler-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* Inputs (if any) */
+input,select,textarea{
+  background:var(--surface-2); color:var(--text);
+  border:1px solid #334155; border-radius:10px;
 }
+input::placeholder,textarea::placeholder{ color:#94a3b8; }
 
-.navbar-toggler:focus {
-	box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.7) !important;
-}
-
-/* OPTION BUTTON */
-.options-button {
-	background-color: var(--bs-gray-700);
-	border: 1px solid #fff;
-}
-
-#options-toggler {
-	box-shadow: 0px 3px 50px rgba(0,0,0,0.2);
-}
-
-#options-toggler:hover {
-	box-shadow: 0px 3px 50px rgba(0,0,0,0.3);
-}
-
-#theme:hover, #lan:hover {
-	background-color: var(--bg-color);
-}
-
-/* TEACHING RELATED */
-.academic-name {
-	color: #0dcaf0;
-}
-
-.academic-block {
-	border-left: 2px #0dcaf0 solid;
-}
-
-.student-block {
-	border-left: 2px #00FFC1 solid;
-}
-
-.student-name {
-	color: #00FFC1;
-}
+/* Subtle scrollbar (WebKit) */
+*::-webkit-scrollbar{ height:10px; width:10px; }
+*::-webkit-scrollbar-thumb{ background:#263246; border-radius:10px; }
+*::-webkit-scrollbar-track{ background:#0a0f1b; }

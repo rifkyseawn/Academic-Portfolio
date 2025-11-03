@@ -1,0 +1,347 @@
+/* =========================
+   THEME TOKENS
+   ========================= */
+html[data-theme="light"]{
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --nav: #f8f9fa;
+  --text: #111111;
+  --head: #0f172a;
+  --muted: #334155;
+  --border: #e5e7eb;
+  --chip: #f8fafc;
+  --chip-border: #e5e7eb;
+  --link: #0f172a;
+  --link-hover: #111827;
+  --shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+html[data-theme="dark"]{
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --nav: #0b1220;
+  --text: #e5e7eb;
+  --head: #ffffff;
+  --muted: #cbd5e1;
+  --border: #334155;
+  --chip: #0f172a;
+  --chip-border: #334155;
+  --link: #93c5fd;
+  --link-hover: #bfdbfe;
+  --shadow: 0 8px 24px rgba(0,0,0,.45);
+}
+
+/* =========================
+   GLOBAL
+   ========================= */
+html[data-theme="light"] body,
+html[data-theme="dark"]  body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h3,html[data-theme="light"] h4,
+html[data-theme="light"] b, html[data-theme="light"] strong{
+  color: var(--head) !important;
+}
+html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3,html[data-theme="dark"] h4,
+html[data-theme="dark"] b, html[data-theme="dark"] strong{
+  color: var(--head) !important;
+}
+
+/* Subjudul / deskripsi */
+html[data-theme="light"] .t-secondary,
+html[data-theme="light"] .trnsf-thin,
+html[data-theme="light"] .blog-short{ color: var(--muted) !important; }
+
+html[data-theme="dark"] .t-secondary,
+html[data-theme="dark"] .trnsf-thin,
+html[data-theme="dark"] .blog-short{ color: var(--muted) !important; }
+
+/* =========================
+   NAVBAR & LINKS
+   ========================= */
+html[data-theme="light"] #top-nav{ background: var(--nav) !important; }
+html[data-theme="light"] .nav-link{ color: rgba(0,0,0,.9) !important; }
+html[data-theme="light"] .nav-link:hover{ color: rgba(0,0,0,.7) !important; }
+
+html[data-theme="dark"]  #top-nav{ background: var(--nav) !important; }
+html[data-theme="dark"]  .nav-link{ color: rgba(255,255,255,.92) !important; }
+html[data-theme="dark"]  .nav-link:hover{ color: rgba(255,255,255,.75) !important; }
+
+html[data-theme="light"] a, html[data-theme="light"] .link-dark{ color: var(--link) !important; }
+html[data-theme="light"] a:hover, html[data-theme="light"] .link-dark:hover{ color: var(--link-hover) !important; }
+
+html[data-theme="dark"]  a, html[data-theme="dark"]  .link-dark{ color: var(--link) !important; }
+html[data-theme="dark"]  a:hover, html[data-theme="dark"]  .link-dark:hover{ color: var(--link-hover) !important; }
+
+/* =========================
+   CARDS (Projects, Experience, .card)
+   ========================= */
+html[data-theme="light"] #blogContent .clickable,
+html[data-theme="light"] #academicContent .academic-block,
+html[data-theme="light"] .card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+html[data-theme="dark"]  #blogContent .clickable,
+html[data-theme="dark"]  #academicContent .academic-block,
+html[data-theme="dark"]  .card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* =========================
+   PILLS / TAGS / CHIPS
+   ========================= */
+html[data-theme="light"] #blogContent .btn-pill,
+html[data-theme="light"] .chip{
+  background: var(--chip) !important;
+  border: 1px solid var(--chip-border) !important;
+  color: var(--head) !important;
+}
+html[data-theme="dark"]  #blogContent .btn-pill,
+html[data-theme="dark"]  .chip{
+  background: var(--chip) !important;
+  border: 1px solid var(--chip-border) !important;
+  color: var(--text) !important;
+}
+
+/* =========================
+   TIMELINE (Experience)
+   ========================= */
+html[data-theme="dark"]  #academicContent .row.language::before{ background: var(--border) !important; }
+html[data-theme="dark"]  #academicContent .academic-block::before{
+  background: var(--head) !important;
+  border: 2px solid var(--surface) !important;
+  box-shadow: 0 0 0 2px var(--border) !important;
+}
+
+/* =========================
+   LEFT PANEL LINKS / FLOATING BUTTONS
+   ========================= */
+html[data-theme="light"] #leftPanel .link-dark{ color: var(--link) !important; }
+html[data-theme="light"] #leftPanel .link-dark:hover{ color: var(--link-hover) !important; }
+html[data-theme="dark"]  #leftPanel .link-dark{ color: var(--link) !important; }
+html[data-theme="dark"]  #leftPanel .link-dark:hover{ color: var(--link-hover) !important; }
+
+html[data-theme="light"] .options-button{
+  background: var(--surface) !important; border:1px solid var(--border) !important; color: var(--text) !important;
+}
+html[data-theme="dark"]  .options-button{
+  background: var(--surface) !important; border:1px solid var(--border) !important; color: var(--text) !important;
+}
+
+/* =========================
+   “Penetrasi” spesifik (timpa warna gelap di stylesheet lain)
+   ========================= */
+html[data-theme="dark"] #aboutmeContent p,
+html[data-theme="dark"] #educationContent p,
+html[data-theme="dark"] #blogContent p{ color: var(--text) !important; }
+
+
+
+/* =========================
+   THEME TOKENS (Light + Dark)
+   ========================= */
+/* Default = LIGHT */
+:root{
+  --bg-color:#f8fafc;
+  --nv-color:#0b1220;            /* navbar tetap gelap di light */
+  --card-bg:#ffffff;
+  --text-color:#0f172a;
+  --head-color:#0b1220;
+  --muted-color:#334155;
+  --border-color:#e5e7eb;
+  --rail-color:#e2e8f0;
+  --chip-bg:#f1f5f9;
+  --chip-border:#e5e7eb;
+  --btn-bg:#f8fafc;
+  --btn-bg-hover:#eef2f7;
+  --link-color:#0ea5e9;
+  --link-hover:#0284c7;
+  --shadow-elev:0 6px 20px rgba(2,6,23,.06);
+  --shadow-elev-hover:0 10px 30px rgba(2,6,23,.12);
+}
+
+/* DARK */
+html[data-theme="dark"]{
+  --bg-color:#0b1220;
+  --nv-color:#0b1220;
+  --card-bg:#111827;
+  --text-color:#e5e7eb;
+  --head-color:#ffffff;
+  --muted-color:#cbd5e1;
+  --border-color:#334155;
+  --rail-color:#334155;
+  --chip-bg:#0f172a;
+  --chip-border:#334155;
+  --btn-bg:#0f172a;
+  --btn-bg-hover:#111827;
+  --link-color:#93c5fd;
+  --link-hover:#bfdbfe;
+  --shadow-elev:0 8px 26px rgba(0,0,0,.55);
+  --shadow-elev-hover:0 12px 30px rgba(0,0,0,.6);
+}
+
+/* ===== Global apply ===== */
+body{ background:var(--bg-color) !important; color:var(--text-color) !important; }
+h1,h2,h3,h4,h5,h6,b,strong{ color:var(--head-color) !important; }
+
+/* Navbar selalu gelap + teks putih */
+#top-nav{ background:var(--nv-color) !important; border-bottom:1px solid var(--border-color) !important; }
+#top-nav .nav-link{ color:#fff !important; }
+#top-nav .nav-link:hover{ color:rgba(255,255,255,.82) !important; }
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Cards */
+#blogContent .clickable,
+#academicContent .academic-block,
+.card{
+  background:var(--card-bg) !important;
+  border:1px solid var(--border-color) !important;
+  box-shadow:var(--shadow-elev) !important;
+}
+#blogContent .clickable:hover,
+#academicContent .academic-block:hover{
+  box-shadow:var(--shadow-elev-hover) !important;
+  transform:translateY(-1px);
+}
+
+/* Secondary text & list agar terbaca di dark */
+.t-secondary,.trnsf-thin,.blog-short,#researchInterestsList span,
+#educationContent .trnsf-italic,#academicContent .academic-rol{
+  color:var(--muted-color) !important;
+}
+#aboutmeContent p,#educationContent p,
+#aboutmeContent li,#educationContent li{
+  color:var(--text-color) !important;
+}
+
+/* Pills / chips / buttons */
+#blogContent .btn-pill,.blog-actions .btn-pill{
+  background:var(--btn-bg) !important;
+  border:1px solid var(--chip-border) !important;
+  color:var(--text-color) !important;
+}
+#blogContent .btn-pill:hover{
+  background:var(--btn-bg-hover) !important;
+  border-color:var(--border-color) !important;
+}
+#blogContent .blog-tags .chip,#blogContent .chip,.chip,
+#academicContent .skill-chips .chip{
+  background:var(--chip-bg) !important;
+  border:1px solid var(--chip-border) !important;
+  color:var(--text-color) !important;
+}
+
+/* Timeline */
+#academicContent .row.language::before{ background:var(--rail-color) !important; }
+#academicContent .academic-block::before{
+  background:var(--head-color) !important;
+  border-color:var(--card-bg) !important;
+  box-shadow:0 0 0 2px var(--rail-color) !important;
+}
+
+/* Links */
+a{ color:var(--link-color); } 
+a:hover{ color:var(--link-hover); }
+
+
+/* === NAVBAR: kontras benar utk light & dark === */
+html[data-theme="light"] #top-nav{
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+html[data-theme="light"] #top-nav .navbar-brand,
+html[data-theme="light"] #top-nav .nav-link{
+  color: #0b1220 !important;          /* teks NAV hitam di light */
+}
+html[data-theme="light"] #top-nav .nav-link:hover{
+  color: #1f2937 !important;
+}
+
+html[data-theme="dark"] #top-nav{
+  background: #0b1220 !important;
+  border-bottom: 1px solid #334155 !important;
+}
+html[data-theme="dark"] #top-nav .navbar-brand,
+html[data-theme="dark"] #top-nav .nav-link{
+  color: #ffffff !important;           /* teks NAV putih di dark */
+}
+html[data-theme="dark"] #top-nav .nav-link:hover{
+  color: rgba(255,255,255,.8) !important;
+}
+
+/* === TAG / CHIP: buat lebih tegas di LIGHT === */
+html[data-theme="light"] #blogContent .blog-tags .chip,
+html[data-theme="light"] #blogContent .chip,
+html[data-theme="light"] .chip{
+  background: #eef2f7 !important;      /* sedikit lebih gelap agar tidak pudar */
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* === DARK: paksa semua teks di Research Interests jadi putih === */
+html[data-theme="dark"] #researchInterestsList,
+html[data-theme="dark"] #researchInterestsList li,
+html[data-theme="dark"] #researchInterestsList p,
+html[data-theme="dark"] #researchInterestsList span{
+  color: #e5e7eb !important;
+}
+html[data-theme="dark"] #researchInterestsList strong{
+  color: #ffffff !important;
+}
+
+/* === DARK: role & company di Experience jangan hitam === */
+html[data-theme="dark"] #academicContent .academic-rol,
+html[data-theme="dark"] #academicContent .academic-rol *,
+html[data-theme="dark"] #academicContent .academic-year,
+html[data-theme="dark"] #academicContent .academic-year *{
+  color: #e5e7eb !important;
+}
+
+/* (opsional) bullet & subtitle biar konsisten */
+html[data-theme="dark"] .t-secondary,
+html[data-theme="dark"] .trnsf-thin{ color:#cbd5e1 !important; }
+
+
+/* === Fixes: Education meta + Selected projects (DARK) === */
+html[data-theme="dark"] #educationContent .trnsf-thin,
+html[data-theme="dark"] #educationContent .trnsf-thin span,
+html[data-theme="dark"] #educationContent .trnsf-italic {
+  color: var(--head-color) !important; /* putih terang */
+}
+
+/* === Fixes: Experience title/company (DARK) === */
+html[data-theme="dark"] #academicContent .academic-name {
+  color: var(--head-color) !important; /* putih, ganti warna hitam dari main.css */
+}
+/* biarkan tanggal/subtitle tetap sedikit redup agar hirarki jelas */
+html[data-theme="dark"] #academicContent .academic-rol {
+  color: var(--muted-color) !important;
+}
+
+/* === Navbar & chips (LIGHT) === */
+html:not([data-theme="dark"]) #top-nav {
+  background:#ffffff !important;
+}
+html:not([data-theme="dark"]) .nav-link {
+  color:#111827 !important;
+}
+html:not([data-theme="dark"]) .nav-link:hover {
+  color:#0f172a !important;
+}
+/* tag/chip normal di light */
+html:not([data-theme="dark"]) #blogContent .chip,
+html:not([data-theme="dark"]) .chip {
+  background:#f3f4f6 !important;
+  border:1px solid #e5e7eb !important;
+  color:#374151 !important;
+}
+

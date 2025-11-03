@@ -266,3 +266,366 @@ li > .active {
 		margin-left: 40px;
 	}
 }
+/* ===== Typography base (biarkan jika sudah ada) ===== */
+:root{ --base-size:18px; --line:1.75; --content-max:900px; }
+html{ font-size:var(--base-size) !important; }
+body{
+  line-height:var(--line) !important; color:#111 !important;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+h1,h2,h3{ font-weight:700 !important; letter-spacing:.2px; color:#0f172a !important; }
+h4,h5{ font-weight:600 !important; color:#111827 !important; }
+h1{ font-size:clamp(1.8rem,2.5vw,2.2rem) !important; }
+h2{ font-size:clamp(1.4rem,1.8vw,1.6rem) !important; }
+h3{ font-size:clamp(1.2rem,1.4vw,1.35rem) !important; }
+.trnsf-thin{ font-weight:600 !important; color:#0f172a !important; }
+.trnsf-italic{ font-style:italic !important; font-weight:600 !important; }
+.t-secondary{ color:#334155 !important; font-weight:600 !important; }
+p.justify{ text-align:left !important; text-justify:auto !important; }
+
+/* ===== Samakan About Me ≡ Education ===== */
+#aboutmeContent .container,
+#educationContent .container{ max-width:var(--content-max) !important; }
+
+#aboutmeContent p, #educationContent p,
+#aboutmeContent li, #educationContent li{
+  font-size:1.05rem !important; line-height:1.75 !important; color:#111 !important;
+}
+
+/* Indent bullet seragam & proper hanging indent */
+#aboutmeContent ul, #educationContent ul{
+  margin-left:0 !important;
+  padding-left:1.5rem !important;
+  padding-inline-start:1.5rem !important;
+  list-style:disc outside !important;
+}
+#aboutmeContent ul li, #educationContent ul li{
+  margin-left:0 !important; text-indent:0 !important; margin-bottom:.4rem !important;
+}
+#aboutmeContent ul li + li, #educationContent ul li + li{ margin-top:.25rem !important; }
+
+
+/* ===== BLOG cards: clean & consistent (override only inside #blogContent) ===== */
+
+/* Card */
+#blogContent .clickable{
+  position: relative;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:18px 20px;
+  box-shadow:0 6px 20px rgba(2,6,23,.06);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+#blogContent .clickable:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(2,6,23,.10);
+  border-color:#d1d5db;
+}
+
+/* Hide time / status / date row for Blog only */
+#blogContent .blog-info{ display:none !important; }
+
+/* Summary text */
+#blogContent .blog-short{
+  font-size:1rem;
+  color:#334155;
+}
+
+/* Action buttons (Notebook / Report / Demo) */
+#blogContent .blog-actions{
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin-top:.5rem;
+}
+#blogContent .btn-pill{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid #e5e7eb;
+  background:#f8fafc;
+  color:#0f172a;
+  font-size:.9rem; font-weight:600;
+  text-decoration:none;
+  transition:background .15s ease, transform .15s ease, border-color .15s ease;
+}
+#blogContent .btn-pill:hover{
+  background:#eef2f7; border-color:#cbd5e1; transform:translateY(-1px);
+}
+
+/* Tags → neutral chips, left-aligned */
+#blogContent .blog-tags{ 
+  display:flex; flex-wrap:wrap; gap:6px; 
+  justify-content:flex-start; margin-top:.5rem; 
+  text-align:left !important;
+}
+#blogContent .blog-tags .tag,
+#blogContent .blog-tags .chip{
+  background:transparent !important;
+  border:1px solid #e5e7eb !important;
+  color:#374151 !important;
+  box-shadow:none !important;
+  padding:4px 10px !important;
+  border-radius:999px !important;
+  font-weight:500 !important;
+  font-size:.85rem !important;
+}
+/* neutralize legacy color helpers */
+#blogContent .blog-tags .t-sky,
+#blogContent .blog-tags .t-lime,
+#blogContent .blog-tags .t-purple{ background:transparent !important; }
+
+/* Title spacing */
+#blogContent .h5{ margin:0; font-weight:700; }
+
+@media (min-width: 992px){
+  #blogContent .clickable{ padding:22px 24px; }
+  #blogContent .blog-short{ font-size:1.02rem; }
+  #blogContent .btn-pill{ font-size:.9rem; }
+}
+
+/* Tampilkan teks dari data-* kalau elemen .language masih kosong */
+#blogContent .language:empty::before { content: attr(data-en); }
+html[lang="ja"] #blogContent .language:empty::before { content: attr(data-ja); }
+
+/* Pastikan tidak tersembunyi oleh rule lain */
+#blogContent .language { display: inline !important; visibility: visible !important; }
+
+/* Sembunyikan waktu/tanggal/status */
+#blogContent .blog-info{ display:none !important; }
+
+/* Kartu: rapi & modern */
+#blogContent .clickable{
+  border-radius:16px; border:1px solid #e5e7eb;
+  box-shadow:0 8px 24px rgba(15,23,42,.06);
+  transition:transform .15s ease, box-shadow .2s ease;
+}
+#blogContent .clickable:hover{
+  transform: translateY(-1px);
+  box-shadow:0 12px 28px rgba(15,23,42,.10);
+}
+#blogContent .h5{ font-weight:700; margin-bottom:.25rem; }
+#blogContent .blog-short{ color:#334155; font-size:1rem; margin-top:.2rem; }
+
+/* Hashtag netral + kiri */
+#blogContent .blog-tags{ text-align:left; margin-top:.6rem; }
+#blogContent .blog-tags .tag{
+  background:#f3f4f6; color:#374151; border:1px solid #e5e7eb; box-shadow:none;
+  font-weight:500; padding:.35rem .6rem; border-radius:999px;
+}
+#blogContent .blog-tags .tag + .tag{ margin-left:.4rem; }
+
+/* Tombol CTA (Notebook/Report) */
+#blogContent .proj-cta{ display:flex; gap:.6rem; margin-top:.7rem; }
+#blogContent .btn-solid{
+  padding:.45rem .8rem; border-radius:10px; background:#111827; color:#fff;
+  text-decoration:none; font-weight:600;
+}
+#blogContent .btn-solid:hover{ background:#0b1220; }
+#blogContent .btn-ghost{
+  padding:.45rem .8rem; border-radius:10px; border:1px solid #e5e7eb;
+  background:#fff; color:#111827; text-decoration:none; font-weight:600;
+}
+#blogContent .btn-ghost:hover{ background:#f8fafc; border-color:#cbd5e1; }
+
+/* Batasi panjang paragraf agar enak dibaca */
+#blogContent .blog-short{ max-width: 68ch; }
+
+/* Aksi (Notebook/Report) rapi & responsif */
+#blogContent .blog-actions{ display:flex; gap:.5rem; flex-wrap:wrap; }
+#blogContent .btn-pill{
+  display:inline-flex; align-items:center; gap:.45rem;
+  padding:.45rem .75rem; border:1px solid #e5e7eb; border-radius:999px;
+  background:#fff; font-weight:600; text-decoration:none; color:#111827;
+}
+#blogContent .btn-pill:hover{ background:#f8fafc; border-color:#cbd5e1; }
+#blogContent .btn-pill:focus{ outline:2px solid #111827; outline-offset:2px; }
+
+/* Chip spacing biar tidak terlalu mepet */
+#blogContent .chip{ display:inline-block; padding:.3rem .6rem; border-radius:999px;
+  background:#f3f4f6; border:1px solid #e5e7eb; color:#374151; font-weight:500;
+}
+#blogContent .chip + .chip{ margin-left:.4rem; }
+
+/* ===== EXPERIENCE as Timeline Cards (under #academicContent) ===== */
+#academicContent .container{max-width:900px}
+
+/* Timeline rail di kiri */
+#academicContent .row.language{position:relative; padding-left:28px;}
+#academicContent .row.language::before{
+  content:""; position:absolute; left:10px; top:0; bottom:0;
+  width:2px; background:#e5e7eb;
+}
+
+/* Kartu tiap pengalaman */
+#academicContent .academic-block{
+  position:relative; margin:26px 0 0; padding:16px 18px 10px;
+  border:1px solid #e5e7eb; border-radius:12px; background:#fff;
+  box-shadow:0 6px 22px rgba(15,23,42,.06);
+  display:grid; grid-template-columns: 1fr auto; grid-column-gap:12px;
+  grid-template-areas:
+    "name period"
+    "role period"
+    "list list";
+}
+
+/* Titik pada rail untuk setiap kartu */
+#academicContent .academic-block::before{
+  content:""; position:absolute; left:-22px; top:22px;
+  width:12px; height:12px; border-radius:50%;
+  background:#111827; border:2px solid #fff; box-shadow:0 0 0 2px #e5e7eb;
+}
+
+/* Header dua kolom: judul kiri, periode kanan */
+#academicContent .academic-name{ grid-area:name; font-weight:700; }
+#academicContent .academic-year{  grid-area:period; align-self:start; justify-self:end;
+  color:#475569; font-weight:600; white-space:nowrap; }
+
+/* Subjudul (opsional: lokasi/tipe) */
+#academicContent .academic-rol{ grid-area:role; color:#334155; margin-top:.15rem; }
+
+/* Bullet list */
+#academicContent .academic-block ul{ grid-area:list; margin:.6rem 0 0 0; padding-left:1.15rem; }
+#academicContent .academic-block li{ margin-bottom:.35rem; line-height:1.65; }
+
+/* Micro-interaction */
+#academicContent .academic-block:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 26px rgba(15,23,42,.10);
+  transition:transform .15s ease, box-shadow .2s ease;
+}
+
+/* Tag/skill chips (jika ditambahkan) */
+#academicContent .exp-tags{ margin-top:.5rem; display:flex; gap:.4rem; flex-wrap:wrap; }
+#academicContent .exp-tags .chip{
+  display:inline-block; padding:.28rem .6rem; border-radius:999px;
+  background:#f3f4f6; border:1px solid #e5e7eb; color:#374151; font-weight:500;
+}
+
+/* Responsif */
+@media (max-width: 768px){
+  #academicContent .academic-block{
+    grid-template-columns:1fr; grid-template-areas:
+      "name" "period" "role" "list";
+  }
+  #academicContent .academic-year{ justify-self:start; margin-top:.2rem; }
+}
+
+/* Cetak bersih */
+@media print{
+  #academicContent .academic-block{ box-shadow:none; border-color:#d1d5db; }
+  #academicContent .row.language::before, #academicContent .academic-block::before{ display:none; }
+}
+
+/* === Experience polish (re-using academic blocks) === */
+#academicContent .academic-block{
+  position:relative;
+  border:1px solid #e5e7eb; border-radius:16px;
+  padding:20px 22px; box-shadow:0 8px 24px rgba(15,23,42,.06);
+}
+#academicContent .academic-block + .academic-block{ margin-top:18px; }
+
+#academicContent .academic-name{ font-weight:800; color:#0f172a; }
+#academicContent .academic-rol{           /* tanggal ke kanan, halus */
+  position:absolute; right:22px; top:20px;
+  color:#475569; font-weight:600;
+}
+
+#academicContent .exp-meta{               /* baris konteks kecil */
+  font-size:.95rem; color:#475569;
+  margin:.30rem 0 .45rem; display:flex; flex-wrap:wrap; gap:.5rem;
+}
+#academicContent .exp-meta .sep::before{ content:"•"; margin:0 .35rem; color:#94a3b8; }
+
+#academicContent .skill-chips{            /* chip netral & konsisten dgn Projects */
+  display:flex; flex-wrap:wrap; gap:.4rem; margin:.55rem 0 .15rem;
+}
+#academicContent .skill-chips .chip{
+  background:#f3f4f6; color:#374151; border:1px solid #e5e7eb;
+  border-radius:999px; padding:.35rem .6rem; font-weight:500;
+}
+
+/* Bullets lebih rapat & mudah scan */
+#academicContent ul{ margin:.55rem 0 0 1.1rem; }
+#academicContent li{ margin-bottom:.4rem; }
+
+/* Mobile tweaks */
+@media (max-width: 768px){
+  #academicContent .academic-rol{ position:static; margin-top:.25rem; }
+  #academicContent .skill-chips .chip:nth-child(n+6){ display:none; } /* max 5 chip */
+}
+
+/* === Work Experience: tanggal di bawah judul === */
+#academicContent .academic-block{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "role"
+    "list";
+}
+
+/* mapping area */
+#academicContent .academic-name{ grid-area: name; }
+#academicContent .academic-rol{
+  grid-area: role;
+  position: static !important;   /* override absolut sebelumnya */
+  right: auto; top: auto;        /* pastikan tidak ada offset tersisa */
+  margin-top: .25rem;
+  color: #475569;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+/* list tetap rapi */
+#academicContent .academic-block ul{
+  grid-area: list;
+  margin: .6rem 0 0 1.15rem;
+}
+
+/* kalau masih ada kartu lama yang pakai .academic-year untuk tanggal, sembunyikan saja */
+#academicContent .academic-year{ display: none; }
+
+#academicContent #leadershipSection{
+  padding-top: 18px !important;
+  margin-top: 26px !important;
+  display: flow-root; /* anti collapse */
+}
+
+/* Tambah ruang di bawah setiap section Experience */
+#academicContent > .container > .row.language{
+  padding-bottom:24px !important;
+}
+/* (opsional) masih kurang? tambah juga margin-top di section berikutnya */
+#academicContent > .container > .row.language + .row.language{
+  margin-top:18px !important;
+}
+
+/* Hanya tombol yang interaktif; kartu bukan link */
+#blogContent .clickable{ cursor: default !important; }
+#blogContent .btn-pill{ cursor: pointer !important; }
+
+/* Jangan transparan—biarkan mewarisi warna normal */
+#blogContent .language {
+  position: relative;
+  color: inherit;         /* <— ubah dari 'transparent' */
+}
+
+/* Tampilkan teks dari data-* */
+#blogContent .language::before {
+  content: attr(data-en);
+  color: inherit;         /* sekarang terlihat */
+}
+html[lang="ja"] #blogContent .language::before {
+  content: attr(data-ja);
+}
+
+/* HAPUS baris ini yang bikin anak-elemen hilang total */
+/* #blogContent .language > * { display: none !important; } */
+
+/* === BLOG/PROJECTS: matikan pseudo-content agar tidak dobel === */
+#blogContent .language::before { content: none !important; }
+
+/* pastikan teks normal terlihat dan anak elemen tidak disembunyikan */
+#blogContent .language { color: inherit !important; }
+#blogContent .language > * { display: inline !important; }
+
