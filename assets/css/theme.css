@@ -345,3 +345,70 @@ html:not([data-theme="dark"]) .chip {
   color:#374151 !important;
 }
 
+/* Reset agar tidak ada rule lain yang menimpa */
+#top-nav .navbar-toggler-icon{
+  width: 1.6rem; height: 1.2rem;
+  background: none !important;
+  filter: none !important;
+  position: relative;
+}
+
+/* Gambar 3 garis dengan pseudo-element (tidak pakai background-image) */
+#top-nav .navbar-toggler-icon::before{
+  content: "";
+  display: block;
+  width: 22px; height: 14px;           /* kanvas ikon */
+  margin: 0 auto;
+  /* tiga garis: atas / tengah / bawah */
+  background:
+    linear-gradient(currentColor, currentColor) 0 0/22px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 6px/22px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 12px/22px 2px no-repeat;
+}
+
+/* Warna & border tombol di LIGHT */
+html[data-theme="light"] #top-nav .navbar-toggler{
+  color: #111827 !important;           /* currentColor = gelap */
+  border-color: #cbd5e1 !important;
+}
+
+/* Warna & border tombol di DARK */
+html[data-theme="dark"] #top-nav .navbar-toggler{
+  color: #ffffff !important;           /* currentColor = putih */
+  border-color: #334155 !important;
+}
+
+
+/* Paksa reset supaya rule lama tidak menghapus ikon */
+#top-nav .navbar-toggler-icon{
+  display:inline-block !important;
+  width:1.6rem !important;
+  height:1.2rem !important;
+  background:none !important;
+  filter:none !important;
+  position:relative !important;
+}
+
+/* LIGHT: gambar 3 garis gelap (tidak pakai currentColor) */
+html[data-theme="light"] #top-nav .navbar-toggler-icon::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(#111827,#111827) 50% 18% / 22px 2px no-repeat,
+    linear-gradient(#111827,#111827) 50% 50% / 22px 2px no-repeat,
+    linear-gradient(#111827,#111827) 50% 82% / 22px 2px no-repeat;
+}
+
+/* DARK: gambar 3 garis putih terang */
+html[data-theme="dark"] #top-nav .navbar-toggler-icon::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(#ffffff,#ffffff) 50% 18% / 22px 2px no-repeat,
+    linear-gradient(#ffffff,#ffffff) 50% 50% / 22px 2px no-repeat,
+    linear-gradient(#ffffff,#ffffff) 50% 82% / 22px 2px no-repeat;
+}
+
+/* Sedikit kontras untuk border tombol */
+html[data-theme="light"] #top-nav .navbar-toggler{ border-color:#cbd5e1 !important; }
+html[data-theme="dark"]  #top-nav .navbar-toggler{ border-color:#334155 !important; }

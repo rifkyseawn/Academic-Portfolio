@@ -1,45 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+<head>
+  <!-- Meta basics -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+  <!-- Identity & SEO -->
+  <title>Rifky Setiawan</title>
+  <meta name="description" content="Rifky Setiawan — Computer Science undergraduate at Universitas Gadjah Mada. Research focus: deep learning, statistical pattern recognition, and NLP, with emphasis on robustness, calibration, selective abstention, and reproducible evaluation.">
+  <meta name="keywords" content="Rifky Setiawan, UGM, Universitas Gadjah Mada, deep learning, pattern recognition, NLP, ASR, summarization, Indonesia, research internship">
+  <meta name="author" content="Rifky Setiawan">
+  <meta name="copyright" content="Work protected by copyright; no distribution without permission.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0f172a">
 
-	<head>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rifky Setiawan">
+  <meta property="og:description" content="Deep learning, pattern recognition, and NLP with a focus on robust and reliable models.">
+  <meta property="og:url" content="https://rifkysetiawan.site/"> <!-- update -->
+  <meta property="og:image" content="assets/img/og-card.png">       <!-- update -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rifky Setiawan">
+  <meta name="twitter:description" content="Deep learning, pattern recognition, and NLP with a focus on robust and reliable models.">
+  <meta name="twitter:image" content="assets/img/og-card.png">      <!-- update -->
 
-		<!-- Meta tags -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rifkysetiawan.site/"><!-- update -->
 
-		<meta name="description" content="Nicolas Meseguer's website, biography, education, previous experience and published papers."/>
-		<meta name="keywords" content="nicolasmeseguer, NicolasMeseguer, Nicolas Meseguer, nicolas meseguer youtube, nicolas meseguer github, nicolas meseguer murcia, nicolas meseguer cv, nicolas meseguer portfolio"/>
-		
-		<meta name="author" content="Nicolas Meseguer" />
-		<meta name="copyright" content="Work protected by copyright; no distribution without permission." />
-		
-		<!-- Title + Icon -->
-		<title>Rifky Setiawan</title>
-		<link rel="icon" type="image/x-icon" href="assets/documents/imgs/NicolasMeseguer.ico">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"><!-- update path if needed -->
 
-		<!-- Improve SEO -->
-		<meta name="robots" content="index,follow" />
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=20251101a">
+  <link rel="stylesheet" href="assets/css/theme.css?v=20251103a">
 
-		<!-- Styles -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-		<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-<link rel="stylesheet" href="assets/css/main.css?v=20251101a">
-<link rel="stylesheet" href="assets/css/theme.css?v=20251103a">  <!-- pastikan ini -->
+  <!-- JSON-LD (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rifky Setiawan",
+    "url": "https://rifkysetiawan.site/",
+    "image": "https://your-domain.example/assets/documents/imgs/RifkySetiawan.png",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universitas Gadjah Mada"
+    },
+    "jobTitle": "Undergraduate, Department of Computer Science",
+    "knowsAbout": [
+      "Deep learning",
+      "Statistical pattern recognition",
+      "Natural language processing",
+      "Automatic speech recognition",
+      "Abstractive summarization",
+      "Model calibration"
+    ],
+    "knowsLanguage": ["id", "en", "ja"],
+    "sameAs": [
+      "https://github.com/rifkyseawn",
+      "https://www.linkedin.com/in/setiawanrifky"
+    ]
+  }
+  </script>
 
+  <!-- Language switcher: uses data-en / data-ja on any .language element -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+      document.querySelectorAll('.language').forEach(el => {
+        const content = el.dataset[lang] || el.dataset.en || '';
+        if (content) el.textContent = content;
+      });
+    });
+  </script>
+</head>
 
-
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
-  document.querySelectorAll('#blogContent .language').forEach(el => {
-    el.textContent = el.dataset[lang] || el.dataset.en || '';
-  });
-});
-</script>
 
 	
   </head>
@@ -116,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				<div id="leftPanel" class="col-md-3 language">
 					<div class="row mb-3">
 						<div class="col">
-							<img src="assets/documents/imgs/RifkySetiawan.png" class="rounded me-auto d-block img-fluid profilepicture" alt="Nicolas Meseguer profile picture">
+							<img src="assets/documents/imgs/RifkySetiawan.png" class="rounded me-auto d-block img-fluid profilepicture" alt="Rifky Setiawan profile picture">
 						</div>
 					</div>
 
@@ -147,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						</div>
 
 						<div class="col-10 language">
-  <a href="assets/documents/NicolasMeseguerCV.pdf"
+  <a href="assets/documents/RifkySetiawanCV.pdf"
      class="link-dark" target="_blank"
      data-en="Download CV (updated Oct 2025)"
      data-ja="履歴書をダウンロード（2025年10月更新）"></a>
@@ -438,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-ja="制約のあるデバイス向けの軽量 MFCC 音声感情分類器。RAM に優しい前処理、コンパクトな LSTM と GRU ベースライン、macro-F1 とクラス別混同行列に基づく評価。女性話者 2 名・感情 7 種の TESS を用い、固定シードの層化分割を採用。"></div>
 
       <div class="blog-actions mt-2">
-        <a class="btn-pill" href="/assets/notebooks/AudioSentiment_RNN_Reformatted.ipynb" target="_blank" rel="noopener">
+        <a class="btn-pill" href="/assets/documents/Notebook/RifkySetiawan_UGM_AudioSentiment_MFCC_LSTM.ipynb" target="_blank" rel="noopener">
           <i class="fa-light fa-file-lines" aria-hidden="true"></i>
           <span class="language" data-en="Notebook" data-ja="ノートブック"></span>
         </a>
@@ -472,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-ja="感情・GBV・ヘイト／攻撃を対象とする共有エンコーダ。ラベル整合と層化分割を実施。温度法またはアイソトニック回帰による信頼度較正、リスクとカバレッジ曲線、クラス別誤差分析を含む。低信頼時の棄権を備え、アナリスト支援として設計。"></div>
 
       <div class="blog-actions mt-2">
-        <a class="btn-pill" href="/assets/notebooks/RifkySetiawan_UGM_MTL_SafetyCriticalTextClassification.ipynb" target="_blank" rel="noopener">
+        <a class="btn-pill" href="/assets/documents/Notebook/RifkySetiawan_UGM_MTL_SafetyRelevantTextClassification.ipynb" target="_blank" rel="noopener">
           <i class="fa-light fa-file-lines" aria-hidden="true"></i>
           <span class="language" data-en="Notebook" data-ja="ノートブック"></span>
         </a>
@@ -510,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-ja="FLAN-T5 Small。命令プレフィックス、安全なバッチング、制御付きデコードを採用。DialogSum（CC BY-NC-SA 4.0）で ROUGE-1／-2／-L を再現可能に評価し、含意に基づく簡易ファクトチェックを実施。"></div>
 
       <div class="blog-actions mt-2">
-        <a class="btn-pill" href="/assets/notebooks/Text_Summarization_Reformatted.ipynb" target="_blank" rel="noopener">
+        <a class="btn-pill" href="/assets/documents/Notebook/RifkySetiawan_UGM_DialogueSummarization_FLANT5Small.ipynb" target="_blank" rel="noopener">
           <i class="fa-light fa-file-lines" aria-hidden="true"></i>
           <span class="language" data-en="Notebook" data-ja="ノートブック"></span>
         </a>
@@ -544,7 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-ja="軽量インテントとスロット、簡易ステートマシンで、共感的な対話と明示的ガードレールを提供。WebMD・Mayo Clinic・Quit Australia 由来の知識ベースを整備し、URL と取得時刻を保持。医療助言ではない旨を明記。"></div>
 
       <div class="blog-actions mt-2">
-        <a class="btn-pill" href="/assets/notebooks/QuitSmokingChatbot_Reformatted.ipynb" target="_blank" rel="noopener">
+        <a class="btn-pill" href="/assets/documents/Notebook/RifkySetiawan_UGM_Qudud_QuitSmokingChatbot.ipynb" target="_blank" rel="noopener">
           <i class="fa-light fa-file-lines" aria-hidden="true"></i>
           <span class="language" data-en="Notebook" data-ja="ノートブック"></span>
         </a>
@@ -582,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
            data-ja="皮膚科トリアージ向けの透明なベースライン。毛髪抑制とインペインティング、空間正規化とガウシアン平滑化、色統計、GLCM と LBP 特徴を使用。約 900 枚・9 クラスで、グリッドサーチ付きの古典的分類器を比較。"></div>
 
       <div class="blog-actions mt-2">
-        <a class="btn-pill" href="/assets/notebooks/RifkySetiawan_UGM_SkinDiseaseClassification_Portfolio.ipynb" target="_blank" rel="noopener">
+        <a class="btn-pill" href="/assets/documents/Notebook/RifkySetiawan_UGM_SkinLesionClassification_GLCM_LBP.ipynb" target="_blank" rel="noopener">
           <i class="fa-light fa-file-lines" aria-hidden="true"></i>
           <span class="language" data-en="Notebook" data-ja="ノートブック"></span>
         </a>
